@@ -1,0 +1,64 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+'
+'@startuml
+'participant Participant as Foo
+'actor       Actor       as Foo1
+'boundary    Boundary    as Foo2
+'control     Control     as Foo3
+'entity      Entity      as Foo4
+'database    Database    as Foo5
+'collections Collections as Foo6
+'queue       Queue       as Foo7
+'Foo -> Foo1 : To actor
+'|||
+'Foo -> Foo2 : To boundary
+'|||
+'Foo -> Foo3 : To control
+'|||
+'Foo -> Foo4 : To entity
+'|||
+'Foo -> Foo5 : To database
+'|||
+'Foo -> Foo6 : To collections
+'|||
+'Foo -> Foo7: To queue
+'|||
+'@enduml
+
+@startuml
+类01 "1" *-- "many" 类02 : 包含
+
+类03 o-- 类04 : 聚合
+
+类05 --> "1" 类06
+@enduml
+
+@startuml
+title 使用方括号([])表示的线混合样式
+class foo类
+class bar类
+bar类1 : [#red,thickness=1]
+bar类2 : [#red,dashed,thickness=2]
+bar类3 : [#green,dashed,thickness=4]
+bar类4 : [#blue,dotted,thickness=8]
+bar类5 : [#blue,plain,thickness=16]
+
+foo类 --> bar类                             : ∅
+foo类 -[#red,thickness=1]-> bar类1          : [#red,1]
+foo类 -[#red,dashed,thickness=2]-> bar类2   : [#red,dashed,2]
+foo类 -[#green,dashed,thickness=4]-> bar类3 : [#green,dashed,4]
+foo类 -[#blue,dotted,thickness=8]-> bar类4  : [blue,dotted,8]
+foo类 -[#blue,plain,thickness=16]-> bar类5  : [blue,plain,16]
+@enduml
+
+@startuml
+!theme spacelab
+Bob -> Alice :  hello
+Bob <- Alice :  $success("success: hello B.")
+Bob -x Alice :  $failure("failure")
+Bob ->> Alice : $warning("warning")
+@enduml
+
